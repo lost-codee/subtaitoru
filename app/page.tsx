@@ -23,7 +23,9 @@ interface SubtitleWord {
 export default function Home() {
   const [hoveredWord, setHoveredWord] = useState<SubtitleWord | null>(null);
 
-  const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
+  const [selectedAnswer, setSelectedAnswer] = useState<string | null>(
+    "Next time"
+  );
 
   const [email, setEmail] = useState("");
 
@@ -39,18 +41,41 @@ export default function Home() {
   };
 
   const subtitles: SubtitleWord[] = [
-    { japanese: "私", english: "I", reading: "わ", explanation: "I am" },
     {
-      japanese: "日本語",
-      english: "Japanese language",
-      reading: "にほんこ",
-      explanation: "I speak Japanese",
+      japanese: "仲間",
+      english: "fellow",
+      reading: "Nakama",
+      explanation: "Fellow",
     },
     {
-      japanese: "勉強",
-      english: "am studying",
-      reading: "へんきしています",
-      explanation: "I am studying Japanese",
+      japanese: " の",
+      english: "of",
+      reading: "no",
+      explanation: "of",
+    },
+    {
+      japanese: "数",
+      english: "Japanese language",
+      reading: "Kazu",
+      explanation: "the number",
+    },
+    {
+      japanese: "と",
+      english: "and",
+      reading: "to",
+      explanation: "and",
+    },
+    {
+      japanese: "配置",
+      english: "placement",
+      reading: "haichi",
+      explanation: "to place",
+    },
+    {
+      japanese: "は",
+      english: "particle は ",
+      reading: "は",
+      explanation: "is",
     },
   ];
 
@@ -58,11 +83,11 @@ export default function Home() {
     <div className="min-h-screen bg-purple-50 font-['Poppins',sans-serif] text-gray-800">
       <header className="container max-w-7xl mx-auto px-4 py-6 flex justify-between items-center">
         <div className="flex items-center space-x-2">
-          <div className="w-8 h-8 bg-purple-600 rounded-lg flex items-center justify-center">
+          <div className="w-8 h-8 bg-[#4F46E5] rounded-lg flex items-center justify-center">
             <span className="text-white font-bold">S</span>
           </div>
           <span className="font-bold text-xl hidden md:inline-block">
-            Subtaitaru
+            Subtaitoru
           </span>
         </div>
         <nav className="space-x-6">
@@ -85,7 +110,7 @@ export default function Home() {
         <section className="flex flex-col items-center justify-center text-center py-10 gap-10 md:pt-36">
           <h1 className="md:text-6xl text-5xl font-extrabold delay-100 duration-200 animate-in fade-in-0 slide-in-from-top-4 fill-mode-both leading-[1.3]">
             Enjoy{" "}
-            <span className="relative z-0 mx-4 sm:mx-6 leading-none inline-block not-italic text-primary-foreground before:absolute before:inset-0 before:-z-[1] before:-rotate-1 before:-skew-x-6 before:-scale-x-[1.2] before:scale-y-[1.2] before:bg-purple-600  sm:before:scale-y-[1.4]">
+            <span className="relative z-0 mx-4 sm:mx-6 leading-none inline-block not-italic text-primary-foreground before:absolute before:inset-0 before:-z-[1] before:-rotate-1 before:-skew-x-6 before:-scale-x-[1.2] before:scale-y-[1.2] before:bg-[#4F46E5]  sm:before:scale-y-[1.4]">
               learning
             </span>{" "}
             while watching
@@ -99,7 +124,7 @@ export default function Home() {
         <div className="flex flex-col items-center gap-4">
           <div className="delay-300 duration-200 animate-in fade-in-0 slide-in-from-top-4 fill-mode-both">
             <a
-              className="bg-purple-600 hover:bg-purple-700 font-medium text-white py-4 px-7 rounded-lg  gap-3 flex items-center justify-center
+              className="bg-[#4F46E5] hover:bg-[#3730A3] font-medium text-white py-4 px-7 rounded-lg  gap-3 flex items-center justify-center
               md:text-lg
               text-sm
               "
@@ -204,9 +229,9 @@ export default function Home() {
       </main>
 
       <section className="container py-24 mx-auto px-4 delay-500 duration-200 animate-in fade-in-0 fill-mode-both">
-        <VideoFrame src="/assets/nanami.jpg" alt="Anime scene placeholder">
+        <VideoFrame src="/assets/nanami.png" alt="Anime scene placeholder">
           <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-50 p-4 rounded-lg">
-            <div className="inline-block space-x-4">
+            <div className="inline-block space-x-1">
               {subtitles.map((word, index) => (
                 <span
                   key={index}
@@ -266,24 +291,22 @@ export default function Home() {
                     "text-white text-lg sm:text-xl transition-transform"
                   }
                 >
-                  <span className="text-purple-500">いま</span>はいま
+                  <span className="text-purple-500">今度</span>て いつ
                 </span>
               </div>
             </div>
-            <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 ">
+            <div className="absolute bottom-20 left-[47%] transform -translate-x-1/2 ">
               <CursorArrowIcon className="w-8 h-8 text-white " />
             </div>
             <div className="absolute w-[300px] bottom-40 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-70 p-4 rounded-lg">
               <div className="flex flex-col space-y-1 pb-4">
                 <div className="flex justify-between items-center">
-                  <span className="text-white  md:text-sm">れん</span>
+                  <span className="text-white  md:text-sm">こんど</span>
                   <Flag className="w-6 h-6 text-white" />
                 </div>
-                <span className="text-white font-medium text-2xl">連</span>
+                <span className="text-white font-medium text-2xl">今度</span>
               </div>
-              <p className="text-white text-sm md:text-lg ">
-                Two reams (of paper), 1000 sheets (of paper)
-              </p>
+              <p className="text-white text-sm md:text-lg ">next time</p>
             </div>
           </VideoFrame>
         </div>
@@ -291,14 +314,14 @@ export default function Home() {
 
       <section className="bg-purple-50 py-24">
         <div className="container mx-auto flex px-4 flex-col-reverse lg:flex-row items-center justify-center">
-          <div className="lg:w-1/2 mb-10 lg:mb-0 flex flex-col md:flex-row md:pr-16">
+          <div className="lg:w-1/2 mb-10 lg:mb-0 flex flex-col md:flex-row md:pr-16 ">
             <img
               src="/assets/Brody-Perfect-Days.webp"
               alt="Anime scene placeholder"
               className="w-full md:w-1/2 object-cover rounded-lg shadow-lg"
             />
-            <div className="w-full md:w-1/2 ">
-              <div className="bg-white p-6 rounded-lg shadow-lg">
+            <div className="w-full md:w-1/2">
+              <div className="bg-white px-6 py-12 rounded-lg shadow-lg">
                 <h3 className="text-xl font-semibold mb-2">Quiz yourself</h3>
                 <div className="w-full bg-gray-200 rounded-full h-2.5 mb-6">
                   <div
@@ -306,35 +329,32 @@ export default function Home() {
                     style={{ width: "45%" }}
                   ></div>
                 </div>
-                <div className="text-6xl font-bold text-center mb-4">連</div>
+                <div className="text-6xl font-bold text-center mb-4">今度</div>
                 <p className="text-gray-600 text-center mb-4">
                   Choose the right meaning
                 </p>
                 <div className="grid grid-cols-2 gap-4">
-                  {[
-                    "Your dead",
-                    "Two reams",
-                    "See you later",
-                    "Good evening",
-                  ].map((answer, index) => (
-                    <Button
-                      key={index}
-                      onClick={() => handleAnswerClick(answer)}
-                      className={`w-full ${
-                        selectedAnswer === answer
-                          ? answer === "Two reams"
-                            ? "bg-green-500 hover:bg-green-600"
-                            : "bg-red-500 hover:bg-red-600"
-                          : "bg-white hover:bg-gray-100"
-                      } ${
-                        selectedAnswer === answer
-                          ? "text-white"
-                          : "text-gray-800"
-                      } border border-gray-300`}
-                    >
-                      {answer}
-                    </Button>
-                  ))}
+                  {["Now", "Next time", "See you later", "Good evening"].map(
+                    (answer, index) => (
+                      <Button
+                        key={index}
+                        onClick={() => handleAnswerClick(answer)}
+                        className={`w-full ${
+                          selectedAnswer === answer
+                            ? answer === "Next time"
+                              ? "bg-green-500 hover:bg-green-600"
+                              : "bg-red-500 hover:bg-red-600"
+                            : "bg-white hover:bg-gray-100"
+                        } ${
+                          selectedAnswer === answer
+                            ? "text-white"
+                            : "text-gray-800"
+                        } border border-gray-300`}
+                      >
+                        {answer}
+                      </Button>
+                    )
+                  )}
                 </div>
               </div>
             </div>
@@ -367,19 +387,19 @@ export default function Home() {
                   title: "Upload Subtitle",
                   description:
                     "Open Subtaitaru and click 'Upload Subtitle' to select your .vtt file",
-                  image: "/placeholder.svg?height=240&width=320",
+                  image: "/assets/upload-file.png",
                 },
                 {
                   title: "Configure Settings",
                   description:
                     "Adjust font size, color, and other settings to your preference",
-                  image: "/placeholder.svg?height=240&width=320",
+                  image: "/assets/configure-settings.png",
                 },
                 {
                   title: "Watch and Learn",
                   description:
                     "Enjoy your video with interactive subtitles. Click words for translations!",
-                  image: "/placeholder.svg?height=240&width=320",
+                  image: "/assets/watching.png",
                 },
               ].map((step, index) => (
                 <div key={index} className="flex flex-col items-center">
@@ -398,7 +418,7 @@ export default function Home() {
                     </h3>
                     <p className="text-gray-600">{step.description}</p>
                   </div>
-                  <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xl mb-4">
+                  <div className="w-12 h-12 bg-[#4F46E5] rounded-full flex items-center justify-center text-white font-bold text-xl mb-4">
                     {index + 1}
                   </div>
                   {index < 2 && (
@@ -411,7 +431,7 @@ export default function Home() {
 
           <div className="mt-20 text-center flex justify-center">
             <a
-              className="bg-purple-600 hover:bg-purple-700 font-medium text-white py-4 px-7 rounded-lg  gap-3 flex items-center justify-center
+              className="bg-[#4F46E5] hover:bg-[#3730A3] font-medium text-white py-4 px-7 rounded-lg  gap-3 flex items-center justify-center
               md:text-lg
               text-sm
               "
@@ -439,7 +459,7 @@ export default function Home() {
               onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                 setEmail(e.target.value)
               }
-              className="w-64 mr-2"
+              className="w-64 mr-2 bg-white"
               required
             />
             <Button
