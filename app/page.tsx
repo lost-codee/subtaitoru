@@ -11,14 +11,21 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { CursorArrowIcon } from "@radix-ui/react-icons";
+import { Poppins } from "next/font/google";
 
 interface SubtitleWord {
   japanese: string;
   english: string;
-  // for hiragana
-  reading?: string;
+  reading?: string; // for kana
   explanation?: string;
 }
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-poppins",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
 
 export default function Home() {
   const [hoveredWord, setHoveredWord] = useState<SubtitleWord | null>(null);
@@ -80,7 +87,12 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-purple-50 font-['Poppins',sans-serif] text-gray-800">
+    <div
+      className={cn(
+        "min-h-screen bg-purple-50 font-['Poppins',sans-serif] text-gray-800",
+        poppins.className
+      )}
+    >
       <header className="container max-w-7xl mx-auto px-4 py-6 flex justify-between items-center">
         <div className="flex items-center space-x-2">
           <div className="w-8 h-8 bg-[#4F46E5] rounded-lg flex items-center justify-center">
