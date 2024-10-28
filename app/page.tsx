@@ -29,18 +29,33 @@ const poppins = Poppins({
 
 export default function Home() {
   const [hoveredWord, setHoveredWord] = useState<SubtitleWord | null>(null);
-
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(
     "Next time"
   );
 
   const [email, setEmail] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the email to your backend
-    console.log("Subscribing email:", email);
-    setEmail("");
+    try {
+      const response = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+      if (response.ok) {
+        alert("Thank you for subscribing!");
+        setEmail("");
+      } else {
+        alert("An error occurred while subscribing.");
+        console.error("Error subscribing:", response.status);
+      }
+    } catch (error) {
+      console.error("Error subscribing:", error);
+      alert("An error occurred while subscribing.");
+    }
   };
 
   const handleAnswerClick = (answer: string) => {
@@ -89,7 +104,7 @@ export default function Home() {
   return (
     <div
       className={cn(
-        "min-h-screen bg-purple-50 font-['Poppins',sans-serif] text-gray-800",
+        "min-h-screen bg-purple-50 font-['Poppins',sans-serif] text-gray-800 px-4",
         poppins.className
       )}
     >
@@ -103,10 +118,10 @@ export default function Home() {
           </span>
         </div>
         <nav className="space-x-6">
-          <Link href="#" className="text-sm hover:underline">
+          <Link href="#contact" className="text-sm hover:underline">
             Contact
           </Link>
-          <Link href="#" className="text-sm hover:underline">
+          <Link href="/privacy-policy" className="text-sm hover:underline">
             Privacy Policy
           </Link>
           <a
@@ -463,7 +478,11 @@ export default function Home() {
             Be the first to know about new features and anime additions. Join
             our community of language learners today!
           </p>
-          <form onSubmit={handleSubmit} className="flex justify-center mb-12">
+          <form
+            onSubmit={handleSubmit}
+            className="flex justify-center mb-12"
+            id="contact"
+          >
             <Input
               type="email"
               placeholder="Enter your email"
