@@ -1,6 +1,6 @@
 // app/api/subscribe/route.js
 import { NextResponse } from "next/server";
-import { v4 as uuidv4 } from "uuid";
+// import { v4 as uuidv4 } from "uuid";
 import nodemailer from "nodemailer";
 
 // Configure the transporter with environment variables
