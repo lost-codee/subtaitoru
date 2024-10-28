@@ -27,11 +27,11 @@ export const POST = async (req: Request) => {
     }
 
     // Create a new subscriber
-    const subscriber = {
-      id: uuidv4(),
-      email,
-      subscribedAt: new Date(),
-    };
+    // const subscriber = {
+    //   id: uuidv4(),
+    //   email,
+    //   subscribedAt: new Date(),
+    // };
 
     // Save the subscriber to the database (replace with actual DB code)
     // Example: await database.saveSubscriber(subscriber);
