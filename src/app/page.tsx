@@ -436,7 +436,7 @@ export default function Home() {
                         src={step.image}
                         alt={step.title}
                         layout="fill"
-                        objectFit="cover"
+                        style={{ objectFit: "cover" }}
                         className="rounded-lg"
                       />
                     </div>

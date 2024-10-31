@@ -30,7 +30,7 @@ export const VideoFrame = ({
       )}
       {...props}
     >
-      <Image src={src} alt={alt} fill objectFit="cover" />
+      <Image src={src} alt={alt} fill style={{ objectFit: "cover" }} />
 
       <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent pt-10">
         <div className="px-4 pb-4">
