@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
 
 import { ArrowRight, Flag } from "lucide-react";
@@ -12,6 +11,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { CursorArrowIcon } from "@radix-ui/react-icons";
 import { Poppins } from "next/font/google";
+import { Nav } from "@/components/nav";
+import { Header } from "@/components/header";
 
 interface SubtitleWord {
   japanese: string;
@@ -108,30 +109,7 @@ export default function Home() {
         poppins.className
       )}
     >
-      <header className="container max-w-7xl mx-auto px-4 py-6 flex justify-between items-center">
-        <div className="flex items-center space-x-2">
-          <div className="w-8 h-8 bg-[#4F46E5] rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold">S</span>
-          </div>
-          <span className="font-bold text-xl hidden md:inline-block">
-            Subtaitoru
-          </span>
-        </div>
-        <nav className="space-x-6">
-          <Link href="#contact" className="text-sm hover:underline">
-            Contact
-          </Link>
-          <Link href="/privacy-policy" className="text-sm hover:underline">
-            Privacy Policy
-          </Link>
-          <a
-            href="https://chromewebstore.google.com/detail/subtaitoru/hkfpajnoghiofabhiegfedkakdlngojp?authuser=0&hl=en"
-            className="hidden md:inline-block bg-gray-800 text-white hover:bg-gray-700 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 py-2 cursor-pointer"
-          >
-            Get started
-          </a>
-        </nav>
-      </header>
+      <Header />
 
       <main className="mx-auto container">
         <section className="flex flex-col items-center justify-center text-center py-10 gap-10 md:pt-36">
@@ -166,7 +144,7 @@ export default function Home() {
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"
-                stroke-linecap="round"
+                strokeLinecap="round"
                 stroke-linejoin="round"
               >
                 <circle cx="12" cy="12" r="10"></circle>
@@ -190,15 +168,15 @@ export default function Home() {
                   <path
                     d="M14 3.16669H2.00002C1.26364 3.16669 0.666687 3.76364 0.666687 4.50002V12.5C0.666687 13.2364 1.26364 13.8334 2.00002 13.8334H14C14.7364 13.8334 15.3334 13.2364 15.3334 12.5V4.50002C15.3334 3.76364 14.7364 3.16669 14 3.16669Z"
                     stroke="#1F2937"
-                    stroke-width="2"
-                    stroke-linecap="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
                     stroke-linejoin="round"
                   />
                   <path
                     d="M0.666687 7.16669H15.3334"
                     stroke="#1F2937"
-                    stroke-width="2"
-                    stroke-linecap="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
                     stroke-linejoin="round"
                   />
                 </g>
@@ -226,15 +204,15 @@ export default function Home() {
                   <path
                     d="M14.6666 7.88668V8.50001C14.6658 9.93763 14.2003 11.3365 13.3395 12.4879C12.4788 13.6393 11.2688 14.4817 9.89022 14.8893C8.5116 15.2969 7.03815 15.2479 5.68963 14.7497C4.3411 14.2515 3.18975 13.3307 2.40729 12.1247C1.62482 10.9187 1.25317 9.49205 1.34776 8.05755C1.44235 6.62305 1.99812 5.25756 2.93217 4.16473C3.86621 3.07189 5.1285 2.31027 6.53077 1.99344C7.93304 1.67662 9.40016 1.82157 10.7133 2.40668"
                     stroke="#1F2937"
-                    stroke-width="2"
-                    stroke-linecap="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
                     stroke-linejoin="round"
                   />
                   <path
                     d="M14.6667 3.16669L8 9.84002L6 7.84002"
                     stroke="#1F2937"
-                    stroke-width="2"
-                    stroke-linecap="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
                     stroke-linejoin="round"
                   />
                 </g>
